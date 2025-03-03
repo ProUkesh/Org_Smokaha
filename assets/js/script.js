@@ -86,3 +86,24 @@ for (let i = 0; i < accordionBtn.length; i++) {
   });
 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const accordionButtons = document.querySelectorAll('[data-accordion-btn]');
+
+  accordionButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const accordionContent = this.nextElementSibling;
+      const isActive = accordionContent.classList.contains('active');
+
+      // Close all accordion contents
+      document.querySelectorAll('.submenu-category-list').forEach(content => {
+        content.classList.remove('active');
+      });
+
+      // Toggle the clicked accordion content
+      if (!isActive) {
+        accordionContent.classList.add('active');
+      }
+    });
+  });
+});
