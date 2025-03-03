@@ -679,6 +679,21 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   object-position: right;
 }
 
+.banner-footer-img-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+
+/* Style for the image */
+.banner-footer-img {
+  max-width: 100%;              /* Prevent the image from overflowing */
+  height: auto;                 /* Maintain aspect ratio */
+  display: block;               /* Remove extra space below the image */
+}
+
+
 .banner-content {
   background: hsla(0, 0%, 100%, 0.8);
   position: absolute;
