@@ -23,7 +23,7 @@
   --spanish-gray: hsl(0, 0%, 60%);
   --sonic-silver: hsl(0, 0%, 47%);
   --eerie-black: hsl(0, 0%, 13%);
-  --salmon-pink: hsl(353, 100%, 78%);
+  --salmon-pink: hsl(32, 95%, 29%);
   --sandy-brown: hsl(29, 90%, 65%);
   --bittersweet: hsl(0, 100%, 70%);
   --ocean-green: hsl(152, 51%, 52%);
@@ -323,7 +323,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   position: absolute;
   top: 15px;
   right: 15px;
-  background: var(--salmon-pink);
+  background: var(hsl(32, 95%, 29%)pink);
   color: var(--white);
   font-size: 16px;
   padding: 5px;
