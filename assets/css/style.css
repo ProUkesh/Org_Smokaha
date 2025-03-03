@@ -2629,3 +2629,23 @@ footer {
   }
 
 }
+
+
+/**
+  * Deals of the day
+  */
+
+  #deal-of-the-day {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px auto;
+  }
+
+  #deal-img {
+    max-width: 100%;
+    height: auto;
+  }
+  
