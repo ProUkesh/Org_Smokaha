@@ -2084,7 +2084,7 @@
             - PRODUCT FEATURED
           -->
 
-          <!-- <div class="product-featured">
+          <div class="product-featured">
 
             <h2 class="title">Deal of the day</h2>
 
@@ -2101,6 +2101,7 @@
                   <div class="showcase-content">
                     
                     <div id="deal-of-the-day">
+                      <h2 id = "deal-day"></h2>
                       <h2 id="deal-text"></h2>
                     </div>
                     
@@ -2113,7 +2114,7 @@
 
             </div>
 
-          </div> -->
+          </div>
 
 
 
@@ -2783,7 +2784,7 @@
             - TESTIMONIALS
           -->
 
-          <div class="testimonial">
+          <!-- <div class="testimonial">
 
             <h2 class="title">testimonial</h2>
 
@@ -2804,15 +2805,17 @@
 
             </div>
 
-          </div>
+          </div> -->
 
-
+          <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div class="elfsight-app-f9ec06ed-c253-49ed-a81b-4a2f01d8c385" data-elfsight-app-lazy></div>
 
           <!--
             - CTA
           -->
 
-          <div class="cta-container">
+          <!-- <div class="cta-container">
 
             <img src="./assets/images/cta-banner.jpg" alt="summer collection" class="cta-banner">
 
@@ -2828,7 +2831,7 @@
 
             </a>
 
-          </div>
+          </div> -->
 
 
 
@@ -2836,7 +2839,7 @@
             - SERVICE
           -->
 
-          <div class="service">
+          <!-- <div class="service">
 
             <h2 class="title">Our Services</h2>
 
@@ -2919,7 +2922,7 @@
 
             </div>
 
-          </div>
+          </div> -->
 
         </div>
 
@@ -3382,10 +3385,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Get the elements to update the deal text and image
   const dealText = document.getElementById("deal-text");
+  const dealday = document.getElementById("deal-day");
+
   const dealImage = document.querySelector(".showcase-img");
 
   if (deals[dayOfWeek]) {
         dealText.textContent = deals[dayOfWeek];
+        dealday.textContent = dayOfWeek + " Deals" ;
         dealImage.src = images[dayOfWeek]; // Update the image source
         dealImage.alt = deals[dayOfWeek]; // Update the alt text for accessibility
     }
@@ -3393,6 +3399,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   document.getElementById("deal-img").src = dealImage.src;
+
 });
 
   </script>
