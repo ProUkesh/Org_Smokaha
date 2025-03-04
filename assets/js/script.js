@@ -97,5 +97,26 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Accordion functionality for mobile menu
+  const accordionButtonsMobile = document.querySelectorAll("[data-accordion-btn]");
+  accordionButtonsMobile.forEach(button => {
+    button.addEventListener("click", function () {
+      const accordionContent = this.nextElementSibling;
+      if (accordionContent.style.maxHeight) {
+        accordionContent.style.maxHeight = null;
+      } else {
+        accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+      }
+      this.classList.toggle("active");
+    });
+  });
 });
+
+// Check if 'ethereum' property is already defined
+if (!Object.getOwnPropertyDescriptor(window, 'ethereum')) {
+  Object.defineProperty(window, 'ethereum', {
+    // ...property definition...
+  });
+}
 
