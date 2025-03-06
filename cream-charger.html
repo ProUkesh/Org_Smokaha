@@ -665,44 +665,35 @@
 
 
         <div class="product-main">
-          <div id="geekbar-container"></div>
+          <div id="whitit-container"></div>
           <script>
-            fetch('./disposable-brands/geekbar.html')
+            fetch('./creamcharger-brands/whip-it.html')
               .then(response => response.text())
               .then(data => {
-                document.getElementById('geekbar-container').innerHTML = data;
+                document.getElementById('whitit-container').innerHTML = data;
               });
           </script>
+          <div id="youcan-container"></div>
+          <script>
+            fetch('./Battries-brands/youcan.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('youcan-container').innerHTML = data;
+              });
+          </script>
+            <div id="lookah-container"></div>
+            <script>
+              fetch('./Battries-brands/lookah.html')
+                .then(response => response.text())
+                .then(data => {
+                  document.getElementById('lookah-container').innerHTML = data;
+                });
+            </script>
+            
           
            
             <!-- Here i need to add another product brand -->
-        <div id="raz-container"></div>
-          <script>
-            fetch('./disposable-brands/raz.html')
-              .then(response => response.text())
-                .then(data => {
-                  document.getElementById('raz-container').innerHTML = data;
-                });
-          </script>
-
-
-              <div id="pillowtalk-container"></div>
-              <script>
-                fetch('./disposable-brands/pillowtalk.html')
-                  .then(response => response.text())
-                  .then(data => {
-                    document.getElementById('pillowtalk-container').innerHTML = data;
-                  });
-              </script>
-
-<div id="lostmary-container"></div>
-<script>
-  fetch('./disposable-brands/lostmary.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('lostmary-container').innerHTML = data;
-    });
-</script>
+        
 
          
 </div>
