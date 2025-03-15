@@ -1,119 +1,108 @@
 'use strict';
 
-// modal variables
-const modal = document.querySelector('[data-modal]');
-const modalCloseBtn = document.querySelector('[data-modal-close]');
-const modalCloseOverlay = document.querySelector('[data-modal-overlay]');
+// Ensure script only runs once
+if (!window.isScriptLoaded) {
+    window.isScriptLoaded = true;
 
-// modal function
-const modalCloseFunc = function () { modal.classList.add('closed') }
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("✅ Script Loaded and DOM Fully Ready");
 
-// modal eventListener
-if (modalCloseOverlay) {
-  modalCloseOverlay.addEventListener('click', modalCloseFunc);
-}
-if (modalCloseBtn) {
-  modalCloseBtn.addEventListener('click', modalCloseFunc);
-}
+        // Wait for elements to be available
+        setTimeout(() => {
+            console.log("🔍 Checking for required elements...");
 
-// notification toast variables
-const notificationToast = document.querySelector('[data-toast]');
-const toastCloseBtn = document.querySelector('[data-toast-close]');
+            /*** ✅ Mobile Menu Handling ***/
+            const mobileMenuOpenBtn = document.querySelectorAll('[data-mobile-menu-open-btn]');
+            const mobileMenu = document.querySelector('[data-mobile-menu]');
+            const mobileMenuCloseBtn = document.querySelector('[data-mobile-menu-close-btn]');
+            const overlay = document.querySelector('[data-overlay]');
 
-// notification toast eventListener
-if (toastCloseBtn) {
-  toastCloseBtn.addEventListener('click', function () {
-    notificationToast.classList.add('closed');
-  });
-}
+            if (mobileMenu && overlay && mobileMenuOpenBtn.length > 0 && mobileMenuCloseBtn) {
+                console.log("✅ Mobile Menu elements found. Attaching event listeners.");
 
+                mobileMenuOpenBtn.forEach(btn => {
+                    btn.addEventListener("click", function () {
+                        mobileMenu.classList.add("active");
+                        overlay.classList.add("active");
+                    });
+                });
 
-/// mobile menu variables
-const mobileMenuOpenBtn = document.querySelectorAll('[data-mobile-menu-open-btn]');
-const mobileMenu = document.querySelectorAll('[data-mobile-menu]');
-const mobileMenuCloseBtn = document.querySelectorAll('[data-mobile-menu-close-btn]');
-const overlay = document.querySelector('[data-overlay]');
+                mobileMenuCloseBtn.addEventListener("click", function () {
+                    mobileMenu.classList.remove("active");
+                    overlay.classList.remove("active");
+                });
 
-for (let i = 0; i < mobileMenuOpenBtn.length; i++) {
+                overlay.addEventListener("click", function () {
+                    mobileMenu.classList.remove("active");
+                    overlay.classList.remove("active");
+                });
 
-  // mobile menu function
-  const mobileMenuCloseFunc = function () {
-    mobileMenu[i].classList.remove('active');
-    overlay.classList.remove('active');
-  }
+            } else {
+                console.error("❌ Mobile menu elements not found. Make sure header.html is loaded.");
+            }
 
-  mobileMenuOpenBtn[i].addEventListener('click', function () {
-    mobileMenu[i].classList.add('active');
-    overlay.classList.add('active');
-  });
+            /*** ✅ Modal Handling ***/
+            const modal = document.querySelector('[data-modal]');
+            const modalCloseBtn = document.querySelector('[data-modal-close]');
+            const modalCloseOverlay = document.querySelector('[data-modal-overlay]');
 
-  mobileMenuCloseBtn[i].addEventListener('click', mobileMenuCloseFunc);
-  overlay.addEventListener('click', mobileMenuCloseFunc);
+            if (modal && modalCloseBtn && modalCloseOverlay) {
+                console.log("✅ Modal elements found. Attaching event listeners.");
 
-}
+                const modalCloseFunc = function () {
+                    modal.classList.add('closed');
+                };
 
+                modalCloseOverlay.addEventListener('click', modalCloseFunc);
+                modalCloseBtn.addEventListener('click', modalCloseFunc);
 
-// accordion variables
-const accordionBtn = document.querySelectorAll('[data-accordion-btn]');
-const accordion = document.querySelectorAll('[data-accordion]');
+            } else {
+                console.error("❌ Modal elements not found.");
+            }
 
-for (let i = 0; i < accordionBtn.length; i++) {
-  accordionBtn[i].addEventListener('click', function () {
-    const clickedBtn = this.nextElementSibling.classList.contains('active');
+            /*** ✅ Notification Toast Handling ***/
+            const notificationToast = document.querySelector('[data-toast]');
+            const toastCloseBtn = document.querySelector('[data-toast-close]');
 
-    for (let i = 0; i < accordion.length; i++) {
-      if (clickedBtn) break;
+            if (notificationToast && toastCloseBtn) {
+                console.log("✅ Notification Toast elements found. Attaching event listeners.");
+                
+                toastCloseBtn.addEventListener('click', function () {
+                    notificationToast.classList.add('closed');
+                });
+            } else {
+                console.error("❌ Notification Toast elements not found.");
+            }
 
-      if (accordion[i].classList.contains('active')) {
-        accordion[i].classList.remove('active');
-        accordionBtn[i].classList.remove('active');
-      }
-    }
+            /*** ✅ Accordion Menu Handling ***/
+            const accordionBtn = document.querySelectorAll('[data-accordion-btn]');
+            const accordion = document.querySelectorAll('[data-accordion]');
 
-    this.nextElementSibling.classList.toggle('active');
-    this.classList.toggle('active');
-  });
-}
+            if (accordionBtn.length > 0 && accordion.length > 0) {
+                console.log("✅ Accordion elements found. Attaching event listeners.");
 
-document.addEventListener('DOMContentLoaded', function() {
-  const accordionButtons = document.querySelectorAll('[data-accordion-btn]');
+                accordionBtn.forEach((btn, index) => {
+                    btn.addEventListener("click", function () {
+                        const clickedBtn = this.nextElementSibling.classList.contains('active');
 
-  accordionButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const accordionContent = this.nextElementSibling;
-      const isActive = accordionContent.classList.contains('active');
+                        // Close all accordions
+                        accordion.forEach((acc, i) => {
+                            if (clickedBtn) return;
+                            if (acc.classList.contains('active')) {
+                                acc.classList.remove('active');
+                                accordionBtn[i].classList.remove('active');
+                            }
+                        });
 
-      // Close all accordion contents
-      document.querySelectorAll('.submenu-category-list').forEach(content => {
-        content.classList.remove('active');
-      });
+                        // Toggle the clicked accordion
+                        this.nextElementSibling.classList.toggle('active');
+                        this.classList.toggle('active');
+                    });
+                });
+            } else {
+                console.warn("⚠️ Accordion elements not found.");
+            }
 
-      // Toggle the clicked accordion content
-      if (!isActive) {
-        accordionContent.classList.add('active');
-      }
+        }, 500); // Delay execution by 500ms to allow header.html to load
     });
-  });
-
-  // Accordion functionality for mobile menu
-  const accordionButtonsMobile = document.querySelectorAll("[data-accordion-btn]");
-  accordionButtonsMobile.forEach(button => {
-    button.addEventListener("click", function () {
-      const accordionContent = this.nextElementSibling;
-      if (accordionContent.style.maxHeight) {
-        accordionContent.style.maxHeight = null;
-      } else {
-        accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-      }
-      this.classList.toggle("active");
-    });
-  });
-});
-
-// Check if 'ethereum' property is already defined
-if (!Object.getOwnPropertyDescriptor(window, 'ethereum')) {
-  Object.defineProperty(window, 'ethereum', {
-    // ...property definition...
-  });
 }
-

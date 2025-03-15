@@ -621,19 +621,52 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .mobile-navigation-menu {
-  display: none;
+  background-color: #ffffff !important; /* White background */
+  color: #333; /* Dark text for readability */
+  width: 80%; /* Adjust menu width */
+  max-width: 350px;
+  height: 100vh; /* Full height */
   position: fixed;
   top: 0;
-  right: 0;
-  width: 80%;
-  height: 100%;
-  background: white;
-  z-index: 20;
-  overflow-y: auto;
+  left: -100%; /* Initially hidden */
+  transition: 0.3s ease-in-out;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  z-index: 1000;
+}
+
+.mobile-navigation-menu a {
+  color: #333 !important; /* Ensure menu text is visible */
+  font-size: 16px;
+  padding: 10px;
+  display: block;
 }
 
 .mobile-navigation-menu.active {
-  display: block;
+  left: 0;
+}
+
+.mobile-navigation-menu ion-icon {
+  color: #333 !important;
+}
+
+/* Ensure overlay is visible */
+[data-overlay] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  z-index: 999;
+}
+
+/* Show overlay when active */
+[data-overlay].active {
+  visibility: visible;
+  opacity: 1;
 }
 
 .menu-top {
@@ -983,7 +1016,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 \*-----------------------------------*/
 
 .sidebar {
-  background: var(--white);
+  background: rgba(82, 33, 26, 0.63);
   position: fixed;
   top: 0;
   left: -100%;
@@ -1029,12 +1062,20 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .sidebar-title {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: var(--fs-5);
   text-transform: uppercase;
   letter-spacing: 0.8px;
   font-weight: var(--weight-600);
 }
+.sidebar-subtitle {
+  color: #ffffff;
+  font-size: var(--fs-4);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: var(--weight-500);
+}
+
 
 .sidebar-close-btn {
   color: #FFFFFF;
