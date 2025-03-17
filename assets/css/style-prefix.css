@@ -623,7 +623,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .mobile-navigation-menu {
   background-color: #ffffff !important; /* White background */
   color: #333; /* Dark text for readability */
-  width: 80%; /* Adjust menu width */
+  width: 100%; /* Adjust menu width */
   max-width: 350px;
   height: 100vh; /* Full height */
   position: fixed;
@@ -872,7 +872,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .banner-content {
-  background: hsla(0, 0%, 100%, 0.8);
+  background: hsla(29, 89%, 41%, 0.418);
   position: absolute;
   bottom: 25px;
   left: 25px;
@@ -1568,12 +1568,47 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .product-main { margin-bottom: 30px; }
 
 .product-grid {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
-  gap: 25px;
+  grid-template-columns: repeat(4, 1fr); /* Default 4-column layout for desktop */
+  gap: 15px;
+  padding: 10px;
 }
+
+.product-item {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Responsive Grid for Tablet */
+@media screen and (max-width: 1024px) {
+  .product-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
+  }
+}
+
+/* Responsive Grid for Mobile */
+@media screen and (max-width: 768px) {
+  .product-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on small tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .product-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+  .product-item {
+      max-width: 100px; /* Adjust product size to fit 4 in a row */
+  }
+}
+
 
 .product-grid .showcase {
   border: 1px solid var(--cultured);
@@ -3436,4 +3471,98 @@ footer {
   height: auto;
   display: block;
   margin: auto;
+}
+
+#ageModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  text-align: center;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 15px;
+}
+
+.modal-button {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.yes-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.no-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+@media (max-width: 500px) {
+  .modal-content {
+    width: 90%;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+}
+
+.deal-featured {
+  background-color: rgba(165, 42, 42, 0.8); /* Brown with 80% transparency */
+  color: white; /* White text */
+  padding: 20px;
+  border-radius: 10px; /* Optional rounded corners */
+}
+
+.deal-featured h2,
+.deal-featured #deal-of-the-day h2 {
+  color: white; /* Ensure all headings inside are white */
+}
+
+h2.title {
+  margin-top: 12px;
+  margin-bottom: 5px;
+   /* Adjust the value as needed */
 }

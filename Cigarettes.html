@@ -174,23 +174,42 @@
 
 
         <div class="product-main">
-          <div id="whitit-container"></div>
+          <div id="marlboro-container"></div>
           <script>
-            fetch('./creamcharger-brands/whip-it.html')
+            fetch('./Cigarettes-brands/marlboro.html')
               .then(response => response.text())
               .then(data => {
-                document.getElementById('whitit-container').innerHTML = data;
+                document.getElementById('marlboro-container').innerHTML = data;
               });
           </script>
+
+<div id="Camel"></div>
+<script>
+  fetch('./Cigarettes-brands/Camel.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('Camel').innerHTML = data;
+    });
+</script>
+<div id="Pall-mall-container"></div>
+<script>
+  fetch('./Cigarettes-brands/Pall-mall.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('Pall-mall-container').innerHTML = data;
+    });
+</script>
+
+<div id="American-Spirit-container"></div>
+<script>
+  fetch('./Cigarettes-brands/American-Spirit.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('American-Spirit-container').innerHTML = data;
+    });
+</script>
+
           
-          <div id="crememax-container"></div>
-          <script>
-            fetch('./creamcharger-brands/crememax.html')
-              .then(response => response.text())
-              .then(data => {
-                document.getElementById('crememax-container').innerHTML = data;
-              });
-          </script>
           
             
             
@@ -577,7 +596,7 @@
         </div>
 
         <div class="footer-category-box">
-          <h3 class="category-box-title">E-liquids :</h3>
+          <h3 class="category-box-title">Cigarettes :</h3>
         
           <a href="#" class="footer-category-link">Juice Head</a>
           <a href="#" class="footer-category-link">Jam Moster</a>

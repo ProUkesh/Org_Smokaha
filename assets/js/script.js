@@ -106,3 +106,28 @@ if (!window.isScriptLoaded) {
         }, 500); // Delay execution by 500ms to allow header.html to load
     });
 }
+
+
+function verifyAge(isOldEnough) {
+    if (isOldEnough) {
+      sessionStorage.setItem("ageVerified", "true"); // Save for this session
+      document.getElementById("ageModal").style.display = "none";
+    } else {
+      window.location.href = "https://www.google.com"; // Redirect underage users
+    }
+  }
+
+  // Show the modal only if age verification hasn't been done in this session
+  document.addEventListener("DOMContentLoaded", function () {
+    let ageModal = document.getElementById("ageModal");
+    
+    if (ageModal) { // Check if the element exists before modifying
+      if (sessionStorage.getItem("ageVerified") === "true") {
+        ageModal.style.display = "none";
+      } else {
+        ageModal.style.display = "flex";
+      }
+    } else {
+      console.error("Error: #ageModal not found in the DOM.");
+    }
+  });
