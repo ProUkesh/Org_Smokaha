@@ -2956,6 +2956,12 @@ footer {
 
   .mobile-bottom-navigation { display: none; }
 
+  .mobile-logo img {
+    height: 40px;
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+  
   .desktop-navigation-menu .dropdown-panel {
     display: flex;
     justify-content: space-between;
