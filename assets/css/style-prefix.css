@@ -621,8 +621,9 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .mobile-navigation-menu {
-  background-color: #ffffff !important; /* White background */
-  color: #333; /* Dark text for readability */
+  background: url('/assets/images/navbar_banner.png') no-repeat center center; /* Add background image */
+  background-size: cover; /* Ensure the image covers the entire area */
+  color: #ffffff; /* Dark text for readability */
   width: 100%; /* Adjust menu width */
   max-width: 350px;
   height: 100vh; /* Full height */
@@ -635,7 +636,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .mobile-navigation-menu a {
-  color: #333 !important; /* Ensure menu text is visible */
+  color: #ffffff !important; /* Ensure menu text is visible */
   font-size: 16px;
   padding: 10px;
   display: block;
@@ -688,7 +689,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .menu-top .menu-title {
-  color: var(--brown);
+  color: var(--white);
   font-size: var(--fs-4);
   font-weight: var(--weight-600);
 }
@@ -721,7 +722,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .mobile-menu-category-list .menu-category { border-bottom: 1px solid var(--cultured); }
 
 .mobile-menu-category-list .menu-title {
-  color: #000000;
+  color: #ffffff;
   font-size: var(--fs-6);
   font-weight: var(--weight-500);
   padding: 12px 0;
