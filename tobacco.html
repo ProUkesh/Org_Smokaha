@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smokaha</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo/logo.svg" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style-prefix.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <div class="overlay" data-overlay></div>
+  <div id="header-container"></div>
+  <script>
+    fetch('./header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+  </script>
+  <!--
+    - MODAL
+  -->
+
+  <!-- <div class="modal" data-modal>
+
+    <div class="modal-close-overlay" data-modal-overlay></div>
+
+    <div class="modal-content">
+
+      <button class="modal-close-btn" data-modal-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="newsletter-img">
+        <img src="./assets/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
+      </div>
+
+      <div class="newsletter">
+
+        <form action="#">
+
+          <div class="newsletter-header">
+
+            <h3 class="newsletter-title">Subscribe Newsletter.</h3>
+
+            <p class="newsletter-desc">
+              Subscribe the <b>Anon</b> to get latest products and discount update.
+            </p>
+
+          </div>
+
+          <input type="email" name="email" class="email-field" placeholder="Email Address" required>
+
+          <button type="submit" class="btn-newsletter">Subscribe</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div> -->
+
+
+
+
+
+  <!--
+    - NOTIFICATION TOAST
+  -->
+  <!-- 
+  <div class="notification-toast" data-toast>
+
+    <button class="toast-close-btn" data-toast-close>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+    <div class="toast-banner">
+      <img src="./assets/images/products/jewellery-1.jpg" alt="Rose Gold Earrings" width="80" height="70">
+    </div>
+
+    <div class="toast-detail">
+
+      <p class="toast-message">
+        Someone in new just bought
+      </p>
+
+      <p class="toast-title">
+        Rose Gold Earrings
+      </p>
+
+      <p class="toast-meta">
+        <time datetime="PT2M">2 Minutes</time> ago
+      </p>
+
+    </div>
+
+  </div> -->
+
+
+
+
+
+  <!--
+    - HEADER
+  -->
+
+
+
+
+
+
+
+  <!--
+    - MAIN
+  -->
+
+  <main>
+
+    <!--
+      - BANNER
+    -->
+
+
+
+
+
+
+
+    <!--
+      - CATEGORY
+    -->
+
+
+
+
+
+
+    <div class="product-container">
+
+      <div class="container">
+
+
+        <!--
+          - SIDEBAR
+        -->
+
+
+
+
+
+
+        <div class="product-main">
+          <div id="americanclub-container"></div>
+          <script>
+            fetch('./tobacco-brands/americanclub.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('americanclub-container').innerHTML = data;
+              });
+          </script>
+          <div id="goodstuff-container"></div>
+          <script>
+            fetch('./tobacco-brands/goodstuff.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('goodstuff-container').innerHTML = data;
+              });
+          </script>
+         
+           <div id="gambler-container"></div>
+           <script>
+             fetch('./tobacco-brands/gambler.html')
+               .then(response => response.text())
+               .then(data => {
+                 document.getElementById('gambler-container').innerHTML = data;
+               });
+           </script>
+           <div id="golden-container"></div>
+           <script>
+             fetch('./tobacco-brands/goldenharvest.html')
+               .then(response => response.text())
+               .then(data => {
+                 document.getElementById('golden-container').innerHTML = data;
+               });
+           </script>
+        </div>
+
+        <!--
+      - TESTIMONIALS, CTA & SERVICE
+    -->
+
+        <div>
+
+          <div class="container">
+
+            <div class="testimonials-box">
+
+              <!--
+            - TESTIMONIALS
+          -->
+
+              <!-- <div class="testimonial">
+
+            <h2 class="title">testimonial</h2>
+
+            <div class="testimonial-card">
+
+              <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+
+              <p class="testimonial-name">Alan Doe</p>
+
+              <p class="testimonial-title">CEO & Founder Invision</p>
+
+              <img src="./assets/images/icons/quotes.svg" alt="quotation" class="quotation-img" width="26">
+
+              <p class="testimonial-desc">
+                Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                dolor dolor sit amet.
+              </p>
+
+            </div>
+
+          </div> -->
+
+              <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+
+
+              <!--
+            - CTA
+          -->
+
+              <!-- <div class="cta-container">
+
+            <img src="./assets/images/cta-banner.jpg" alt="summer collection" class="cta-banner">
+
+            <a href="#" class="cta-content">
+
+              <p class="discount">25% Discount</p>
+
+              <h2 class="cta-title">Summer collection</h2>
+
+              <p class="cta-text">Starting @ $10</p>
+
+              <button class="cta-btn">Shop now</button>
+
+            </a>
+
+          </div> -->
+
+
+
+              <!--
+            - SERVICE
+          -->
+
+              <!-- <div class="service">
+
+            <h2 class="title">Our Services</h2>
+
+            <div class="service-container">
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="boat-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Worldwide Delivery</h3>
+                  <p class="service-desc">For Order Over $100</p>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="rocket-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Next Day delivery</h3>
+                  <p class="service-desc">UK Orders Only</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Best Online Support</h3>
+                  <p class="service-desc">Hours: 8AM - 11PM</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="arrow-undo-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Return Policy</h3>
+                  <p class="service-desc">Easy & Free Return</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="ticket-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">30% money back</h3>
+                  <p class="service-desc">For Order Over $100</p>
+              
+                </div>
+              
+              </a>
+
+            </div>
+
+          </div> -->
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+        <!--
+      - BLOG
+    -->
+
+        <!-- <div class="blog">
+
+      <div class="container">
+
+        <div class="blog-container has-scrollbar">
+
+          <div class="blog-card">
+
+            <a href="#">
+              <img src="./assets/images/blog-1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives" width="300" class="blog-banner">
+            </a>
+
+            <div class="blog-content">
+
+              <a href="#" class="blog-category">Fashion</a>
+
+              <a href="#">
+                <h3 class="blog-title">Clothes Retail KPIs 2021 Guide for Clothes Executives.</h3>
+              </a>
+
+              <p class="blog-meta">
+                By <cite>Mr Admin</cite> / <time datetime="2022-04-06">Apr 06, 2022</time>
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="blog-card">
+          
+            <a href="#">
+              <img src="./assets/images/blog-2.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
+                class="blog-banner" width="300">
+            </a>
+          
+            <div class="blog-content">
+          
+              <a href="#" class="blog-category">Clothes</a>
+          
+              <h3>
+                <a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
+              </h3>
+          
+              <p class="blog-meta">
+                By <cite>Mr Robin</cite> / <time datetime="2022-01-18">Jan 18, 2022</time>
+              </p>
+          
+            </div>
+          
+          </div>
+
+          <div class="blog-card">
+          
+            <a href="#">
+              <img src="./assets/images/blog-3.jpg" alt="EBT vendors: Claim Your Share of SNAP Online Revenue."
+                class="blog-banner" width="300">
+            </a>
+          
+            <div class="blog-content">
+          
+              <a href="#" class="blog-category">Shoes</a>
+          
+              <h3>
+                <a href="#" class="blog-title">EBT vendors: Claim Your Share of SNAP Online Revenue.</a>
+              </h3>
+          
+              <p class="blog-meta">
+                By <cite>Mr Selsa</cite> / <time datetime="2022-02-10">Feb 10, 2022</time>
+              </p>
+          
+            </div>
+          
+          </div>
+
+          <div class="blog-card">
+          
+            <a href="#">
+              <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
+                class="blog-banner" width="300">
+            </a>
+          
+            <div class="blog-content">
+          
+              <a href="#" class="blog-category">Electronics</a>
+          
+              <h3>
+                <a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
+              </h3>
+          
+              <p class="blog-meta">
+                By <cite>Mr Pawar</cite> / <time datetime="2022-03-15">Mar 15, 2022</time>
+              </p>
+          
+            </div>
+          
+          </div>
+
+        </div>
+
+      </div>
+
+    </div> -->
+
+  </main>
+
+
+
+
+  <div class="banner">
+
+    <div class="container">
+
+      <div class="slider-container has-scrollbar">
+
+        <div class="slider-item">
+
+          <img src="./assets/images/FooterBanner-1.jpg" alt="women's latest fashion sale" class="banner-img">
+
+          <div class="banner-content">
+
+            <!-- <p class="banner-subtitle">Trending item</p> -->
+
+            <!-- <h2 class="banner-title" style="color: white;">Largest Selection<br> Lowest Prices</h2> -->
+
+            <!-- <p class="banner-text">
+              starting at &dollar; <b>20</b>.00
+            </p>
+
+            <a href="#" class="banner-btn">Shop now</a> -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+  <!--
+    - FOOTER
+  -->
+
+  <footer>
+
+    <div class="footer-category">
+
+      <div class="container">
+
+        <h2 class="footer-category-title">Brand directory</h2>
+
+        <div class="footer-category-box">
+
+          <h3 class="category-box-title">Battries :</h3>
+
+          <a href="#" class="footer-category-link">SMOQ</a>
+          <a href="#" class="footer-category-link">OOZE</a>
+          <a href="#" class="footer-category-link">CARTISAN</a>
+          <a href="#" class="footer-category-link">YoCan</a>
+          <a href="#" class="footer-category-link">Baby Stoner Battries</a>
+          <a href="#" class="footer-category-link">Lookah</a>
+          <a href="#" class="footer-category-link">TYSON</a>
+
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">E-liquids :</h3>
+
+          <a href="#" class="footer-category-link">Juice Head</a>
+          <a href="#" class="footer-category-link">Jam Moster</a>
+          <a href="#" class="footer-category-link">Pop Juice</a>
+          <a href="#" class="footer-category-link">Raz</a>
+          <a href="#" class="footer-category-link">Mr Fog</a>
+          <a href="#" class="footer-category-link">Twist</a>
+          <a href="#" class="footer-category-link">Bar Juice</a>
+          <a href="#" class="footer-category-link">Sad Boy</a>
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">Nicotine Pouches :</h3>
+
+          <a href="#" class="footer-category-link">Zyn</a>
+          <a href="#" class="footer-category-link">Tyson</a>
+          <a href="#" class="footer-category-link">Wyn</a>
+          <a href="#" class="footer-category-link">Minoa</a>
+          <a href="#" class="footer-category-link">G-pulse</a>
+          <a href="#" class="footer-category-link">Lucy</a>
+          <a href="#" class="footer-category-link">Mr Fog</a>
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">Disposable :</h3>
+
+          <a href="#" class="footer-category-link">North</a>
+          <a href="#" class="footer-category-link">Nexa</a>
+          <a href="#" class="footer-category-link">Geek Bar</a>
+          <a href="#" class="footer-category-link">Pillow Talk</a>
+          <a href="#" class="footer-category-link">Lost Mary</a>
+          <a href="#" class="footer-category-link">Space Mary</a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+      <div class="container">
+
+        <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+
+        <p class="copyright">
+          Copyright &copy; <a href="#">Smokaha</a> all rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const deals = {
+        Monday: "25% off on Cigarettes",
+        Tuesday: "25% off on Cigars",
+        Wednesday: "25% off on Disposables",
+        Thursday: "25% off on Wraps",
+        Friday: "25% off on Glasses",
+        Saturday: "25% off on Cigarettes",
+        Sunday: "25% off on Cigarettes",
+      };
+
+      // Define images for each day of the week (you can adjust the paths as needed)
+      const images = {
+        Monday: "./assets/images/camelcrush.png", // Replace with the actual image path
+        Tuesday: "./assets/images/cigars.png", // Replace with the actual image path
+        Wednesday: "./assets/images/disposables.png", // Replace with the actual image path
+        Thursday: "./assets/images/wraps.png", // Replace with the actual image path
+        Friday: "./assets/images/glasses.png", // Replace with the actual image path
+        Saturday: "./assets/images/cigarettes.png", // Replace with the actual image path
+        Sunday: "./assets/images/cigarettes.png", // Replace with the actual image path
+      };
+
+      // Get the current day of the week
+      const today = new Date();
+      const dayOfWeek = today.toLocaleString("en-us", { weekday: "long" });
+
+      // Log the day of the week for debugging purposes
+      console.log("Today is " + dayOfWeek);
+
+      // Get the elements to update the deal text and image
+      const dealText = document.getElementById("deal-text");
+      const dealday = document.getElementById("deal-day");
+
+      const dealImage = document.querySelector(".showcase-img");
+
+      if (deals[dayOfWeek]) {
+        dealText.textContent = deals[dayOfWeek];
+        dealday.textContent = dayOfWeek + " Deals";
+        dealImage.src = images[dayOfWeek]; // Update the image source
+        dealImage.alt = deals[dayOfWeek]; // Update the alt text for accessibility
+      }
+      console.log(dealImage.src);
+
+
+      document.getElementById("deal-img").src = dealImage.src;
+
+    });
+
+  </script>
+
+</body>
+
+</html>
