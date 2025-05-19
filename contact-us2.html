@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smokaha</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo/logo.svg" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style-prefix.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <style>
+        .sidebar {
+            background-color: #000000;
+            padding: 20px;
+            overflow-y: auto;
+            color: white;
+        }
+        .location {
+            cursor: pointer;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .location:hover {
+            background-color: #e9ecef;
+            color: black;
+        }
+        #map {
+            height: 580px;
+            width: 65%;
+        }
+        .contact-form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+        .contact-form .form-control {
+            margin-bottom: 15px;
+        }
+        .contact-form .btn {
+            width: 100%;
+            background-color: #007bff;
+            border: none;
+        }
+        .contact-form .btn:hover {
+            background-color: #0056b3;
+        }
+        .contact-section h1,
+        .contact-section p,
+        .locations h2 {
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+  <div class="overlay" data-overlay></div>
+  
+  <div id="header-container"></div>
+  <script>
+    fetch('./header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+  </script>
+
+<section class="py-5 contact-section">
+        <div class="container-lg">
+            <h1>Contact Us</h1>
+            <p>Thank you for visiting the website of Smokaha. We proudly serve Lincoln, Omaha, Grand Island. Please use the form below to email us.</p>
+
+            <div class="locations">
+                <h2>Our Locations</h2>
+                <div class="row">
+                    <!-- Map Container -->
+                    <div id="map" class="col-12 col-lg-8 mb-4 mb-lg-0"></div>
+
+                    <!-- Sidebar with Locations -->
+                    <div class="sidebar col-12 col-lg-4">
+                        <div class="location" data-lat="40.7574715" data-lng="-96.642934">
+                            <h3>Smokaha Tobacco - Lincoln, Nebraska</h3>
+                            <p>5500 S 56th St ste 135, Lincoln, NE 68516</p>
+                        </div>
+                        <div class="location" data-lat="40.938503" data-lng="-98.378647">
+                            <h3>Smokaha Tobacco - Grand Island</h3>
+                            <p>SMOKAHA TOBACCO, 2250 N Webb Rd Suite 246, Grand Island, NE 68803</p>
+                        </div>
+                        <div class="location" data-lat="41.267063" data-lng="-96.071935">
+                            <h3>Smokaha - Omaha</h3>
+                            <p>3048 N 90th St, Omaha, NE 68134</p>
+                        </div>
+                        <div class="location" data-lat="41.259202" data-lng="-96.052186">
+                            <h3>Smokaha - Omaha</h3>
+                            <p>7918 W Dodge Rd, Omaha, NE 68114</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Us Form -->
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="footer-bottom">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-md-6 copyright">
+                    <p>© 2024 Smokaha. All rights reserved.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+  <footer>
+
+    <div class="footer-category">
+
+      <div class="container">
+
+        <h2 class="footer-category-title">Brand directory</h2>
+
+        <div class="footer-category-box">
+
+          <h3 class="category-box-title">Battries :</h3>
+
+          <a href="#" class="footer-category-link">SMOQ</a>
+          <a href="#" class="footer-category-link">OOZE</a>
+          <a href="#" class="footer-category-link">CARTISAN</a>
+          <a href="#" class="footer-category-link">YoCan</a>
+          <a href="#" class="footer-category-link">Baby Stoner Battries</a>
+          <a href="#" class="footer-category-link">Lookah</a>
+          <a href="#" class="footer-category-link">TYSON</a>
+
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">E-liquids :</h3>
+        
+          <a href="#" class="footer-category-link">Juice Head</a>
+          <a href="#" class="footer-category-link">Jam Moster</a>
+          <a href="#" class="footer-category-link">Pop Juice</a>
+          <a href="#" class="footer-category-link">Raz</a>
+          <a href="#" class="footer-category-link">Mr Fog</a>
+          <a href="#" class="footer-category-link">Twist</a>
+          <a href="#" class="footer-category-link">Bar Juice</a>
+          <a href="#" class="footer-category-link">Sad Boy</a>
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">Nicotine Pouches :</h3>
+        
+          <a href="#" class="footer-category-link">Zyn</a>
+          <a href="#" class="footer-category-link">Tyson</a>
+          <a href="#" class="footer-category-link">Wyn</a>
+          <a href="#" class="footer-category-link">Minoa</a>
+          <a href="#" class="footer-category-link">G-pulse</a>
+          <a href="#" class="footer-category-link">Lucy</a>
+          <a href="#" class="footer-category-link">Mr Fog</a>
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">Disposable :</h3>
+        
+          <a href="#" class="footer-category-link">North</a>
+          <a href="#" class="footer-category-link">Nexa</a>
+          <a href="#" class="footer-category-link">Geek Bar</a>
+          <a href="#" class="footer-category-link">Pillow Talk</a>
+          <a href="#" class="footer-category-link">Lost Mary</a>
+          <a href="#" class="footer-category-link">Space Mary</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-nav">
+
+      <div class="container">
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Popular Categories</h2>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Disposable</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Cigarettes</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">E-Liquid</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">E-Cigarettes</a>
+          </li>
+
+        
+
+        </ul>
+
+        <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Products</h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Prices drop</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">New products</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Best sales</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Contact us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Sitemap</a>
+          </li>
+        
+        </ul>
+
+        <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Our Company</h2>
+          </li>
+        
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Legal Notice</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Terms and conditions</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">About us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Secure payment</a>
+          </li>
+        
+        </ul>
+
+        <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Services</h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Prices drop</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">New products</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Best sales</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Contact us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Sitemap</a>
+          </li>
+        
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Contact</h2>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <address class="content">
+              419 State 414 Rte
+              Beaver Dams, New York(NY), 14812, USA
+            </address>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+
+            <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <a href="mailto:example@gmail.com" class="footer-nav-link">example@gmail.com</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Follow Us</h2>
+          </li>
+
+          <li>
+            <ul class="social-link">
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <div class="container">
+
+        <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+
+        <p class="copyright">
+          Copyright &copy; <a href="#">Smokaha</a> all rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMlNk8ulXDE-8HPul9GZ6dhmLreCPbfJc&callback=initMap"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const mapElement = document.getElementById("map");
+    const locations = document.querySelectorAll(".location");
+
+    // Initialize the map
+    const map = new google.maps.Map(mapElement, {
+      center: { lat: 40.7574715, lng: -96.642934 }, // Default center
+      zoom: 8,
+    });
+
+    // Add markers for each location
+    locations.forEach((location) => {
+      const lat = parseFloat(location.getAttribute("data-lat"));
+      const lng = parseFloat(location.getAttribute("data-lng"));
+      const marker = new google.maps.Marker({
+        position: { lat, lng },
+        map: map,
+        title: location.querySelector("h3").textContent,
+      });
+
+      // Add click event to focus on the marker
+      location.addEventListener("click", () => {
+        map.setCenter({ lat, lng });
+        map.setZoom(14);
+      });
+    });
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const deals = {
+    Monday: "25% off on Cigarettes",
+    Tuesday: "25% off on Cigars",
+    Wednesday: "25% off on Disposables",
+    Thursday: "25% off on Wraps",
+    Friday: "25% off on Glasses",
+    Saturday: "25% off on Cigarettes",
+    Sunday: "25% off on Cigarettes",
+  };
+
+  // Define images for each day of the week (you can adjust the paths as needed)
+  const images = {
+    Monday: "./assets/images/camelcrush.png", // Replace with the actual image path
+    Tuesday: "./assets/images/cigars.png", // Replace with the actual image path
+    Wednesday: "./assets/images/disposables.png", // Replace with the actual image path
+    Thursday: "./assets/images/wraps.png", // Replace with the actual image path
+    Friday: "./assets/images/glasses.png", // Replace with the actual image path
+    Saturday: "./assets/images/cigarettes.png", // Replace with the actual image path
+    Sunday: "./assets/images/cigarettes.png", // Replace with the actual image path
+  };
+
+  // Get the current day of the week
+  const today = new Date();
+  const dayOfWeek = today.toLocaleString("en-us", { weekday: "long" });
+
+  // Log the day of the week for debugging purposes
+  console.log("Today is " + dayOfWeek);
+
+  // Get the elements to update the deal text and image
+  const dealText = document.getElementById("deal-text");
+  const dealday = document.getElementById("deal-day");
+  const dealImage = document.getElementById("deal-img");
+
+  if (deals[dayOfWeek]) {
+    dealText.textContent = deals[dayOfWeek];
+    dealday.textContent = dayOfWeek + " Deals";
+    dealImage.src = images[dayOfWeek]; // Update the image source
+    dealImage.alt = deals[dayOfWeek]; // Update the alt text for accessibility
+  }
+  console.log(dealImage.src);
+});
+</script>
+
+</body>
+
+</html>
