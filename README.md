@@ -8,7 +8,8 @@ This repository contains the source code for **Smokaha**, a static website for a
 - index.html               # Home page
 - contact-us.html          # Contact form and store location map
 - assets/
-  - css/                   # Stylesheets (style.css and style-prefix.css)
+  - css/                   # Stylesheets (style.css)
+
   - js/                    # Client-side JavaScript
   - images/                # Icons, logos and product images
 - [brand folders]          # Category pages for specific products
@@ -18,13 +19,14 @@ All pages include a shared `header.html` file for the navigation menu. JavaScrip
 
 ## Running Locally
 
-The site is completely static and does not require a backend server. You can view it by opening `index.html` in a browser. For a smoother experience with relative links, you may run a lightweight local server, for example using Python:
+Most pages are static and can be viewed by opening `index.html` in a browser. A minimal Node.js server is included to process contact form submissions and serve the site locally. Install dependencies and start the server with:
 
 ```bash
-python3 -m http.server
+npm install
+npm start
 ```
 
-Then visit `http://localhost:8000` in your browser.
+The site will be available at `http://localhost:3000`.
 
 ## Age Restriction Notice
 
@@ -35,4 +37,4 @@ The site contains references to tobacco and nicotine products. The built‑in ag
 Pull requests are welcome. If you plan to contribute substantial changes, consider opening an issue first to discuss your ideas.
 
 ---
-This repository does not currently include a license file. If you intend to use or distribute this code, adding an explicit license is recommended.
+This project is released under the [MIT License](LICENSE).

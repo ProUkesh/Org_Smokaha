@@ -1,9 +1,8 @@
-// ...existing code...
-try {
-  Object.defineProperty(window, 'ethereum', {
-    // ...existing code...
-  });
-} catch (e) {
-  console.error('Failed to define ethereum property:', e);
-}
-// ...existing code...
+(function(){
+  if (typeof window.ethereum === 'undefined') {
+    window.ethereum = {};
+    console.log('Injected mock ethereum object for demo purposes.');
+  } else {
+    console.log('Ethereum provider detected.');
+  }
+})();
