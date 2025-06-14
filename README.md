@@ -9,6 +9,7 @@ This repository contains the source code for **Smokaha**, a static website for a
 - contact-us.html          # Contact form and store location map
 - assets/
   - css/                   # Stylesheets (style.css)
+
   - js/                    # Client-side JavaScript
   - images/                # Icons, logos and product images
 - [brand folders]          # Category pages for specific products
