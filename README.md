@@ -1,40 +1,29 @@
-# Smokaha Website
+# ProUkesh/Org_Smokaha
 
-This repository contains the source code for **Smokaha**, a static website for a smoke shop. The site is built with plain HTML, CSS, and JavaScript and provides pages for various product categories such as cigarettes, cigars, disposable vapes, nicotine pouches, herb concentrate, and more.
+## Overview
+This repository contains the codebase for **ProUkesh/Org_Smokaha**. This README provides a quick overview, folder structure, and local setup steps.
 
-## Project Structure
+## Folder Structure
+- `/` — project root
+- `/server` — backend service (if present)
+- `/src` — application source (if present)
 
-```
-- index.html               # Home page
-- contact-us.html          # Contact form and store location map
-- assets/
-  - css/                   # Stylesheets (style.css)
+> If your repo uses a different layout, update this section accordingly.
 
-  - js/                    # Client-side JavaScript
-  - images/                # Icons, logos and product images
-- [brand folders]          # Category pages for specific products
-```
+## How to open locally
+1. Clone:
+   ```bash
+   git clone https://github.com/ProUkesh/Org_Smokaha.git
+   cd Org_Smokaha
+   ```
+2. Install (if Node):
+   ```bash
+   npm install
+   ```
+3. Run (if scripts exist):
+   ```bash
+   npm run dev
+   ```
 
-All pages include a shared `header.html` file for the navigation menu. JavaScript in `assets/js/script.js` handles mobile navigation, modals, and a simple age verification popup.
-
-## Running Locally
-
-Most pages are static and can be viewed by opening `index.html` in a browser. A minimal Node.js server is included to process contact form submissions and serve the site locally. Install dependencies and start the server with:
-
-```bash
-npm install
-npm start
-```
-
-The site will be available at `http://localhost:3000`.
-
-## Age Restriction Notice
-
-The site contains references to tobacco and nicotine products. The built‑in age verification script requires visitors to confirm they are 21 or older. Ensure compliance with your local laws before deploying or modifying this code.
-
-## Contributing
-
-Pull requests are welcome. If you plan to contribute substantial changes, consider opening an issue first to discuss your ideas.
-
----
-This project is released under the [MIT License](LICENSE).
+## License
+MIT (or update as needed).
