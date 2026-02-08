@@ -36,5 +36,9 @@ The site contains references to tobacco and nicotine products. The built‑in ag
 
 Pull requests are welcome. If you plan to contribute substantial changes, consider opening an issue first to discuss your ideas.
 
+## UI Test
+
+Frontend is connected to localhost API.
+
 ---
 This project is released under the [MIT License](LICENSE).
