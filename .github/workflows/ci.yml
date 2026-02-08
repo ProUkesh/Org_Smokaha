@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node (LTS)
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Print Node version
+        run: node -v
+
+      - name: Install dependencies
+        if: ${{ hashFiles('package.json') != '' }}
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Test (non-blocking)
+        if: ${{ hashFiles('package.json') != '' }}
+        continue-on-error: true
+        run: npm run -s test --if-present
+
+      - name: Build (non-blocking)
+        if: ${{ hashFiles('package.json') != '' }}
+        continue-on-error: true
+        run: npm run -s build --if-present
+
+      - name: Skip (no Node project)
+        if: ${{ hashFiles('package.json') == '' }}
+        run: echo "No package.json found; skipping Node steps."
