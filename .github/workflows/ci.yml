@@ -1,37 +1,42 @@
-
 name: CI
 
 on:
   pull_request:
   push:
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
+      - name: Setup Node (LTS)
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
 
-    - name: Install dependencies
-      run: |
-        if [ -f package-lock.json ]; then
-          npm ci;
-        elif [ -f package.json ]; then
-          npm install;
-        fi
+      - name: Print Node version
+        run: node -v
 
-    - name: Run tests
-      run: |
-        if [ -f package.json ]; then
-          npm run test;
-          npm run build;
-        fi
+      - name: Install dependencies
+        if: ${{ hashFiles('package.json') != '' }}
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
-    - name: Print Node version
-      run: node -v
+      - name: Test
+        if: ${{ hashFiles('package.json') != '' }}
+        run: npm run -s test --if-present
+
+      - name: Build
+        if: ${{ hashFiles('package.json') != '' }}
+        run: npm run -s build --if-present
+
+      - name: Skip (no Node project)
+        if: ${{ hashFiles('package.json') == '' }}
+        run: echo "No package.json found; skipping Node steps."
