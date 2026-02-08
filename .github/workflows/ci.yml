@@ -28,9 +28,8 @@ jobs:
     - name: Run tests
       run: |
         if [ -f package.json ]; then
-          if npm run test; then
-            npm run build;
-          fi
+          npm run test;
+          npm run build;
         fi
 
     - name: Print Node version
