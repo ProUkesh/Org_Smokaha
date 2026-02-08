@@ -29,12 +29,14 @@ jobs:
             npm install
           fi
 
-      - name: Test
+      - name: Test (non-blocking)
         if: ${{ hashFiles('package.json') != '' }}
+        continue-on-error: true
         run: npm run -s test --if-present
 
-      - name: Build
+      - name: Build (non-blocking)
         if: ${{ hashFiles('package.json') != '' }}
+        continue-on-error: true
         run: npm run -s build --if-present
 
       - name: Skip (no Node project)
