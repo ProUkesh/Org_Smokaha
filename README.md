@@ -40,5 +40,8 @@ Pull requests are welcome. If you plan to contribute substantial changes, consid
 
 Frontend is connected to localhost API.
 
----
-This project is released under the [MIT License](LICENSE).
+## Local Dev
+
+- Clone the repository to your local machine.
+- Navigate to the project directory in your terminal.
+- Run the commands `npm install` and `npm start` to start the local server.
